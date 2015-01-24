@@ -22,11 +22,11 @@ line_album=17
 line_title=39
 
 if [ $1 == "title" ]
-	then echo $($get_metadata | sed -n "$line_title p" | grep -o '".*"' | sed s/\"//g)
+	then $get_metadata | sed -n "$line_title p" | grep -o '".*"' | sed s/\"//g
 elif [ $1 == "artist" ]
-	then echo $($get_metadata | sed -n "$line_artist p" | grep -o '".*"' | sed s/\"//g)
+	then $get_metadata | sed -n "$line_artist p" | grep -o '".*"' | sed s/\"//g
 elif [ $1 == "album" ]
-	then echo $($get_metadata | sed -n "$line_album p" | grep -o '".*"' | sed s/\"//g)
+	then $get_metadata | sed -n "$line_album p" | grep -o '".*"' | sed s/\"//g
 elif [ $1 == "playpause" ]
 	then $playpause
 elif [ $1 == "next" ]
